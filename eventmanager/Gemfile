@@ -1,0 +1,4 @@
+source :rubygems
+
+gem "sunlight"
+gem "legislators", :path => "../legislators"
