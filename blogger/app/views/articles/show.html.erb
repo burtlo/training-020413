@@ -1,10 +1,10 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
 
-<%= render partial: 'comment', collection: @article.comments,
+<%= render partial: 'articles/comment', collection: @article.comments,
   locals: { color: "#CF0CF0" } %>
 
-<%= render partial: 'comment_form' %>
+<%= render partial: 'articles/comment_form' %>
 
 <%= link_to "Edit", edit_article_path(@article) %>
 <%= link_to "Delete", article_path(@article), method: :delete %>

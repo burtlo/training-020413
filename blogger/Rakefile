@@ -5,3 +5,25 @@
 require File.expand_path('../config/application', __FILE__)
 
 Blogger::Application.load_tasks
+
+namespace :greater_noun do
+  namespace :lesser_noun do
+    task :verb do
+
+    end
+  end
+end
+
+# namespace :comments do
+#
+#   task :silent_clean => :environment do
+#   # task clean: :environment do
+#     Comment.all.each {|c| c.destroy }
+#   end
+#
+#   desc "It cleans up all the comments"
+#   task :clean => :silent_clean do
+#     puts "All done cleaning"
+#   end
+#
+# end
