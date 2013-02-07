@@ -1,5 +1,6 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
+<p><%= image_tag @article.image.url(:medium) %></p>
 
 <%= render partial: 'articles/comment', collection: @article.comments,
   locals: { color: "#CF0CF0" } %>
