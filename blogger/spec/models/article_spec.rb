@@ -74,7 +74,7 @@ describe Article do
       it "should have two tags" do
         subject.tag_list = "First Tag, Second Tag"
         expect(subject.tags.length).to eq 2
-        
+
         tag_names = subject.tags.map { |tag| tag.name }.sort
         expect(tag_names).to eq [ "First Tag", "Second Tag" ]
       end
@@ -97,6 +97,7 @@ describe Article do
           end
         end
       end
+
     end
   end
 

@@ -17,6 +17,13 @@ Blogger::Application.routes.draw do
     resources :comments
   end
 
+  resources :tags, only: [ :index, :show ]
+  # 
+  # get "tags/index"
+  # get "tags/show"
+
+
+
   # Sample resource route with options:
   #   resources :products do
   #     member do

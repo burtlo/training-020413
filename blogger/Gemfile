@@ -26,6 +26,8 @@ gem 'paperclip'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'debugger'
+  gem 'guard-rspec'
 end
 
 # To use ActiveModel has_secure_password
@@ -40,5 +42,3 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
