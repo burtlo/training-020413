@@ -1,2 +1,4 @@
-<h1>Tags#show</h1>
-<p>Find me in app/views/tags/show.html.erb</p>
+<h1>Tag: <%= @tag.name %></h1>
+<% @tag.articles.each do |article| %>
+  <p><%= link_to article.title, article_path(article) %></p>
+<% end %>
