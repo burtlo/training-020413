@@ -74,8 +74,9 @@ describe Article do
       it "should have two tags" do
         subject.tag_list = "First Tag, Second Tag"
         expect(subject.tags.length).to eq 2
-        expect(subject.tags.first.name).to eq "First Tag"
-        expect(subject.tags.last.name).to eq "Second Tag"
+        
+        tag_names = subject.tags.map { |tag| tag.name }.sort
+        expect(tag_names).to eq [ "First Tag", "Second Tag" ]
       end
 
       context "when there are two similar tags" do
