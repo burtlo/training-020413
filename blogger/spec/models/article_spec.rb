@@ -70,8 +70,6 @@ describe Article do
       end
     end
 
-
-
     context "when given a string with two tag" do
       it "should have two tags" do
         subject.tag_list = "First Tag, Second Tag"
@@ -79,7 +77,7 @@ describe Article do
         expect(subject.tags.first.name).to eq "First Tag"
         expect(subject.tags.last.name).to eq "Second Tag"
       end
-      
+
       context "when there are two similar tags" do
         it "should have one tag" do
           subject.tag_list = "First Tag, First Tag"
@@ -87,7 +85,17 @@ describe Article do
           expect(subject.tags.first.name).to eq "First Tag"
         end
       end
-      
+
+      context "when the article already has a list of tags" do
+        context "when the article is given a smaller list of tags" do
+          it "should update the list of tags to be the smaller list of tags" do
+            subject.tag_list = "First Tag, Second Tag, Third Tag"
+            subject.tag_list = "Second Tag"
+            expect(subject.tags.length).to eq 1
+            expect(subject.tags.first.name).to eq "Second Tag"
+          end
+        end
+      end
     end
   end
 

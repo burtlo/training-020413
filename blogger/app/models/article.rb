@@ -16,6 +16,8 @@ class Article < ActiveRecord::Base
   end
 
   def tag_list=(value)
+    tags.destroy_all
+    
     tag_names = split_and_clean_tag_strings(value)
 
     tag_names.each do |tag_name|
