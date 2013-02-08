@@ -1,4 +1,7 @@
 Blogger::Application.routes.draw do
+  resources :authors
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -18,10 +21,10 @@ Blogger::Application.routes.draw do
   end
 
   resources :tags, only: [ :index, :show ]
-  # 
-  # get "tags/index"
-  # get "tags/show"
-
+  
+  resources :author_sessions
+  match "login" => "author_sessions#new", :as => "login"
+  match "logout" => "author_sessions#destroy", :as => "logout"
 
 
   # Sample resource route with options:

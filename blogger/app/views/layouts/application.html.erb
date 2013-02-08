@@ -8,7 +8,14 @@
 </head>
 <body>
   <p class="flash"><%= flash[:message] %></p>
-<%= yield %>
+  <%= yield %>
 
+  <% if logged_in? %>
+    Logged in as <%= current_user.username %>
+    (<%= link_to "Logout", logout_path %>)
+  <% else %>
+    Logged out
+    (<%= link_to "Login", login_path %>)
+  <% end %>
 </body>
 </html>

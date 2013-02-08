@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+  before_filter :user_is_logged_in,
+    only: [ :new, :create, :edit, :update, :destroy ]
+
   def index
     @articles = Article.all
   end
